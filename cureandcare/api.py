@@ -1,4 +1,6 @@
 import frappe
+from frappe.utils import flt
+
 
 @frappe.whitelist()
 def get_qty_with_customer(customer, item_code):
