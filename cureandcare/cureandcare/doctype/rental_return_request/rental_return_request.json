@@ -1,0 +1,430 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-05-11 16:40:23.577600",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "rental_receipt_no",
+  "date",
+  "branch_name",
+  "sales_executive_name",
+  "customer_name",
+  "customer_email",
+  "rental_basis",
+  "rental_return_request_date",
+  "rented_date",
+  "renewal_no",
+  "column_break_ebay",
+  "from_date_r",
+  "to_date_r",
+  "from_date",
+  "to_date",
+  "duration_r",
+  "no_of_days__month",
+  "month",
+  "no_of_months",
+  "days",
+  "no_of_days",
+  "section_break_xsff",
+  "sd",
+  "column_break_iluj",
+  "security_deposit_r",
+  "column_break_vnmt",
+  "security_deposit_cheque_r",
+  "section_break_eioi",
+  "return_delivery_charges_r",
+  "total_r",
+  "column_break_hyqb",
+  "delivery_charges_r",
+  "paid_amount_r",
+  "column_break_brrk",
+  "pickup_charge",
+  "balance_r",
+  "section_break_iqvr",
+  "return_product_details",
+  "section_break_usip",
+  "deposit_taken",
+  "rental_subtotal",
+  "paid_amount",
+  "delivery_charges",
+  "return_delivery_charges",
+  "rental_return_request_status",
+  "amount_to_be_collected",
+  "balance_to_be_collected",
+  "column_break_qgjk",
+  "pickup_charges",
+  "pickup_by",
+  "pickup_mode",
+  "payment_mode",
+  "actual_amount",
+  "amount_receivable",
+  "balance",
+  "refund_amount",
+  "remarks",
+  "section_break_pdbj",
+  "confirm",
+  "column_break_iafh",
+  "is_picked_up"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "rental_receipt_no",
+   "fieldtype": "Link",
+   "label": "Rental Receipt No",
+   "options": "Rent"
+  },
+  {
+   "fetch_from": "rental_receipt_no.branch_name",
+   "fieldname": "branch_name",
+   "fieldtype": "Link",
+   "label": "Branch Name",
+   "options": "Branch"
+  },
+  {
+   "fetch_from": "rental_receipt_no.sales_executive_name",
+   "fieldname": "sales_executive_name",
+   "fieldtype": "Link",
+   "label": "Sales Executive Name",
+   "options": "Sales Person"
+  },
+  {
+   "fetch_from": "rental_receipt_no.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "rental_receipt_no.customer_email",
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Customer Email"
+  },
+  {
+   "fetch_from": "rental_receipt_no.rental_basis",
+   "fieldname": "rental_basis",
+   "fieldtype": "Data",
+   "label": "Rental Basis"
+  },
+  {
+   "fieldname": "column_break_ebay",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "rental_receipt_no.from_date",
+   "fieldname": "from_date_r",
+   "fieldtype": "Date",
+   "label": "From Date R"
+  },
+  {
+   "fetch_from": "rental_receipt_no.to_date",
+   "fieldname": "to_date_r",
+   "fieldtype": "Date",
+   "label": "To Date R"
+  },
+  {
+   "fetch_from": "rental_receipt_no.from_date",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fetch_from": "rental_receipt_no.to_date",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date "
+  },
+  {
+   "fetch_from": "rental_receipt_no.duration",
+   "fieldname": "duration_r",
+   "fieldtype": "Data",
+   "label": "Duration R"
+  },
+  {
+   "fieldname": "rented_date",
+   "fieldtype": "Date",
+   "label": "Rented Date"
+  },
+  {
+   "fieldname": "rental_return_request_date",
+   "fieldtype": "Date",
+   "label": "Rental Return Request Date"
+  },
+  {
+   "fieldname": "no_of_days__month",
+   "fieldtype": "Int",
+   "label": "No of Days / Month"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Data",
+   "label": "Month"
+  },
+  {
+   "fieldname": "no_of_months",
+   "fieldtype": "Int",
+   "label": "No of Months"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Int",
+   "label": "Days"
+  },
+  {
+   "fieldname": "no_of_days",
+   "fieldtype": "Int",
+   "label": "No of Days"
+  },
+  {
+   "fieldname": "section_break_xsff",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_iluj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "rental_receipt_no.security_deposit",
+   "fieldname": "security_deposit_r",
+   "fieldtype": "Currency",
+   "label": "Security Deposit R"
+  },
+  {
+   "fieldname": "column_break_vnmt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "rental_receipt_no.security_deposit_cheque",
+   "fieldname": "security_deposit_cheque_r",
+   "fieldtype": "Currency",
+   "label": " Security Deposit Cheque R"
+  },
+  {
+   "fieldname": "section_break_eioi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "rental_receipt_no.return_delivery_charges",
+   "fieldname": "return_delivery_charges_r",
+   "fieldtype": "Currency",
+   "label": "Return Delivery Charges R"
+  },
+  {
+   "fieldname": "column_break_hyqb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "rental_receipt_no.delivery_charges",
+   "fieldname": "delivery_charges_r",
+   "fieldtype": "Currency",
+   "label": "Delivery Charges R"
+  },
+  {
+   "fieldname": "column_break_brrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pickup_charge",
+   "fieldtype": "Currency",
+   "label": "Pickup Charge "
+  },
+  {
+   "fetch_from": "rental_receipt_no.total",
+   "fieldname": "total_r",
+   "fieldtype": "Currency",
+   "label": "TOTAL R"
+  },
+  {
+   "fetch_from": "rental_receipt_no.paid_amount",
+   "fieldname": "paid_amount_r",
+   "fieldtype": "Currency",
+   "label": "Paid Amount R"
+  },
+  {
+   "fetch_from": "rental_receipt_no.balance",
+   "fieldname": "balance_r",
+   "fieldtype": "Currency",
+   "label": "Balance R"
+  },
+  {
+   "fieldname": "section_break_iqvr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_usip",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "deposit_taken",
+   "fieldtype": "Currency",
+   "label": "Deposit Taken"
+  },
+  {
+   "fieldname": "rental_subtotal",
+   "fieldtype": "Currency",
+   "label": "Rental SubTotal"
+  },
+  {
+   "fieldname": "delivery_charges",
+   "fieldtype": "Currency",
+   "label": "Delivery Charges"
+  },
+  {
+   "fieldname": "return_delivery_charges",
+   "fieldtype": "Currency",
+   "label": "Return Delivery Charges"
+  },
+  {
+   "fieldname": "amount_receivable",
+   "fieldtype": "Currency",
+   "label": "Amount Receivable"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance"
+  },
+  {
+   "fieldname": "rental_return_request_status",
+   "fieldtype": "Select",
+   "label": "Rental Return Request Status",
+   "options": "\nRequest Received\nSelf Return\nPicked Up\nClosed\nCancelled"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "pickup_mode",
+   "fieldtype": "Select",
+   "label": "Pickup Mode",
+   "options": "\nSelf\nPickup"
+  },
+  {
+   "fieldname": "pickup_by",
+   "fieldtype": "Link",
+   "label": "Pickup By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "pickup_charges",
+   "fieldtype": "Currency",
+   "label": "Pickup Charges"
+  },
+  {
+   "fieldname": "actual_amount",
+   "fieldtype": "Currency",
+   "label": "Actual Amount"
+  },
+  {
+   "fieldname": "refund_amount",
+   "fieldtype": "Currency",
+   "label": "Refund Amount"
+  },
+  {
+   "fieldname": "amount_to_be_collected",
+   "fieldtype": "Currency",
+   "label": "Amount to be Collected"
+  },
+  {
+   "fieldname": "balance_to_be_collected",
+   "fieldtype": "Currency",
+   "label": "Balance to be Collected"
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Select",
+   "label": "Payment Mode",
+   "options": "\nCash\nCheque\nOnline\nGpay\nPatym"
+  },
+  {
+   "fieldname": "column_break_qgjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pdbj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "confirm",
+   "fieldtype": "Check",
+   "label": "Confirm"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "\nRR-.YYYY.-"
+  },
+  {
+   "fieldname": "column_break_iafh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "rental_receipt_no.sd",
+   "fieldname": "sd",
+   "fieldtype": "Check",
+   "label": "SD R"
+  },
+  {
+   "fieldname": "return_product_details",
+   "fieldtype": "Table",
+   "label": "Rent Product Details",
+   "options": "Return Product Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_picked_up",
+   "fieldtype": "Check",
+   "label": "Is Picked Up"
+  },
+  {
+   "fieldname": "renewal_no",
+   "fieldtype": "Link",
+   "label": "Renewal No",
+   "options": "Rent Renewal Receipt"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-22 17:33:14.195340",
+ "modified_by": "Administrator",
+ "module": "cureandcare",
+ "name": "Rental Return Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

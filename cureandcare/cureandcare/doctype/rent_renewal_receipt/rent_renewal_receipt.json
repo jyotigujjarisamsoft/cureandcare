@@ -1,0 +1,360 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-05-19 17:11:36.978376",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "renewal_no",
+  "customer_name",
+  "current_mobile_no",
+  "alternate_mobile_no",
+  "enquiry_no",
+  "column_break_sjqv",
+  "customer_email",
+  "referral",
+  "rental_basis",
+  "duration",
+  "from_date",
+  "to_date",
+  "column_break_amlu",
+  "rental_receipt_date",
+  "payment_status",
+  "sales_executive_name",
+  "branch_name",
+  "rental_receipt_no",
+  "section_break_xdsc",
+  "renewal_product_details",
+  "section_break_ycgi",
+  "product_total",
+  "remarks",
+  "column_break_esoi",
+  "pickup_charge",
+  "section_break_ebrx",
+  "sd",
+  "column_break_jlwh",
+  "security_deposit",
+  "column_break_yfja",
+  "security_deposit_cheque",
+  "delivery_details_section",
+  "delivery_mode",
+  "delivery_charges",
+  "total",
+  "status",
+  "status_of_payment",
+  "autorewewal_status",
+  "closed_date",
+  "column_break_hdsr",
+  "delivery_by",
+  "return_delivery_charges",
+  "payment_mode",
+  "other_charges",
+  "paid_amount",
+  "balance",
+  "posting_status",
+  "bank_details_section",
+  "confirm",
+  "column_break_nhxz",
+  "is_delivered"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "Renewal-.YYYY.-"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "current_mobile_no",
+   "fieldtype": "Data",
+   "label": "Current Mobile No"
+  },
+  {
+   "fieldname": "alternate_mobile_no",
+   "fieldtype": "Data",
+   "label": "Alternate Mobile No"
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Customer Email"
+  },
+  {
+   "fieldname": "enquiry_no",
+   "fieldtype": "Link",
+   "label": "Enquiry No",
+   "options": "Enquiry"
+  },
+  {
+   "fieldname": "column_break_sjqv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "referral",
+   "fieldtype": "Link",
+   "label": "Referral",
+   "options": "Referral"
+  },
+  {
+   "fieldname": "rental_basis",
+   "fieldtype": "Select",
+   "label": "Rental Basis",
+   "options": "\nDaily\nMonthly"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "renewal_no",
+   "fieldtype": "Link",
+   "label": "Renewal No",
+   "options": "Rent"
+  },
+  {
+   "fieldname": "column_break_amlu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "rental_receipt_date",
+   "fieldtype": "Date",
+   "label": "Rental Receipt Date"
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Data",
+   "label": "Payment Status"
+  },
+  {
+   "fieldname": "sales_executive_name",
+   "fieldtype": "Link",
+   "label": "Sales Executive Name",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "branch_name",
+   "fieldtype": "Link",
+   "label": "Branch Name",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "rental_receipt_no",
+   "fieldtype": "Data",
+   "label": "Rental Receipt No"
+  },
+  {
+   "fieldname": "section_break_xdsc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ycgi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "product_total",
+   "fieldtype": "Currency",
+   "label": "Product Total"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": " Remarks"
+  },
+  {
+   "fieldname": "column_break_esoi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pickup_charge",
+   "fieldtype": "Currency",
+   "label": "Pickup Charge"
+  },
+  {
+   "fieldname": "section_break_ebrx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "sd",
+   "fieldtype": "Check",
+   "label": "SD"
+  },
+  {
+   "fieldname": "column_break_jlwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "security_deposit",
+   "fieldtype": "Currency",
+   "label": "Security Deposit"
+  },
+  {
+   "fieldname": "column_break_yfja",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "security_deposit_cheque",
+   "fieldtype": "Currency",
+   "label": " Security Deposit Cheque"
+  },
+  {
+   "fieldname": "delivery_details_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Details"
+  },
+  {
+   "fieldname": "delivery_mode",
+   "fieldtype": "Select",
+   "label": "Delivery Mode",
+   "options": "\nSelf\nDelivery"
+  },
+  {
+   "fieldname": "delivery_charges",
+   "fieldtype": "Currency",
+   "label": "Delivery Charges"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nDraft\nReturned\nTo Be Picked\nCancelled\nRenewed\nClosed\nPartial Active\nTo Be Closed"
+  },
+  {
+   "fieldname": "status_of_payment",
+   "fieldtype": "Select",
+   "label": "Status of Payment",
+   "options": "\nBalance\nPaid"
+  },
+  {
+   "fieldname": "autorewewal_status",
+   "fieldtype": "Select",
+   "label": "AutoRewewal Status",
+   "options": "\nPending\nPosted"
+  },
+  {
+   "fieldname": "closed_date",
+   "fieldtype": "Date",
+   "label": "Closed Date"
+  },
+  {
+   "fieldname": "column_break_hdsr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivery_by",
+   "fieldtype": "Link",
+   "label": "Delivery By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "return_delivery_charges",
+   "fieldtype": "Currency",
+   "label": "Return Delivery Charges"
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Select",
+   "label": "Payment Mode",
+   "options": "\nCash\nCheque\nonline\nGpay\nPaytm\nPhonePe"
+  },
+  {
+   "fieldname": "other_charges",
+   "fieldtype": "Currency",
+   "label": "Other Charges"
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance"
+  },
+  {
+   "fieldname": "posting_status",
+   "fieldtype": "Select",
+   "label": "Posting Status",
+   "options": "\nPending\nPosted"
+  },
+  {
+   "fieldname": "bank_details_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "confirm",
+   "fieldtype": "Check",
+   "label": "Confirm"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_delivered",
+   "fieldtype": "Check",
+   "label": "Is Delivered"
+  },
+  {
+   "fieldname": "column_break_nhxz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "renewal_product_details",
+   "fieldtype": "Table",
+   "label": "Renewal Product Details",
+   "options": "Renewal Product Detail"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-01 12:34:03.817872",
+ "modified_by": "Administrator",
+ "module": "cureandcare",
+ "name": "Rent Renewal Receipt",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
