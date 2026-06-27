@@ -124,7 +124,7 @@ def create_delivery_note(rent_name):
             frappe.throw("No Returned items found")
 
         return_dn.insert(ignore_permissions=True)
-        return_dn.submit()
+        return_dn.save()
 
         return return_dn.name
 
@@ -183,7 +183,7 @@ def create_delivery_note(rent_name):
             })
 
         dn.insert(ignore_permissions=True)
-        dn.submit()
+        dn.save()
 
         return dn.name
         
