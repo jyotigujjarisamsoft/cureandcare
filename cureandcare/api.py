@@ -82,6 +82,7 @@ def create_delivery_note(rent_name):
         return_dn = frappe.new_doc("Delivery Note")
 
         return_dn.customer = rent_doc.customer_name
+        return_dn.company = "cureandcare"
         return_dn.is_return = 1
         return_dn.return_against = original_dn
         return_dn.custom_rent_reference = rent_doc.name
@@ -169,6 +170,7 @@ def create_delivery_note(rent_name):
         dn = frappe.new_doc("Delivery Note")
 
         dn.customer = rent_doc.customer_name
+        dn.company = "cureandcare"
         dn.custom_rent_reference = rent_doc.name
 
         # Add Items
