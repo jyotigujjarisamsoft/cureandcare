@@ -680,7 +680,7 @@ def old_create_delivery_note_return(rent_name):
     # SUBMIT DELIVERY NOTE
     # ===================================================
 
-    return_dn.submit()
+    return_dn.save()
 
     print("Return DN Submitted", return_dn.name)
 
@@ -921,7 +921,7 @@ def create_delivery_note_return(rent_name):
     # SUBMIT DELIVERY NOTE
     # ===================================================
 
-    return_dn.submit()
+    return_dn.save()
 
     print("Return DN Submitted", return_dn.name)
 
