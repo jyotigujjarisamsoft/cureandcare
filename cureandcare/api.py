@@ -299,6 +299,10 @@ def create_rent_renewal(docname):
 
         # LINK TO RENEWAL RECEIPT
         new_rent.renewal_no = source_doc.name
+        new_rent.from_date = source_doc.from_date
+        new_rent.to_date = source_doc.to_date
+        new_rent.security_deposit_cheque = source_doc.security_deposit_cheque
+        new_rent.security_deposit = source_doc.security_deposit
 
         # -------------------------------------------------
         # ADD ONLY RENEWED ITEMS
@@ -583,6 +587,8 @@ def old_create_delivery_note_return(rent_name):
     )
 
     return_dn.customer = rent_doc.customer_name
+    
+    return_dn.custom_delievery_by_name = rent_doc.custom_delievery_by_name
 
     return_dn.is_return = 1
 
@@ -824,6 +830,8 @@ def create_delivery_note_return(rent_name):
     )
 
     return_dn.customer = rent_doc.customer_name
+    
+    return_dn.custom_delievery_by_name = rent_doc.custom_delievery_by_name
 
     return_dn.is_return = 1
 
