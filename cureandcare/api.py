@@ -126,6 +126,13 @@ def create_delivery_note(rent_name):
 
         return_dn.insert(ignore_permissions=True)
         return_dn.save()
+        frappe.db.set_value(
+            "Rent",
+            rent_doc.name,
+            "custom_delivery_note_no",  # Change fieldname if required
+            return_dn.name
+        )
+
 
         return return_dn.name
 
@@ -186,6 +193,13 @@ def create_delivery_note(rent_name):
 
         dn.insert(ignore_permissions=True)
         dn.save()
+        frappe.db.set_value(
+            "Rent",
+            rent_doc.name,
+            "custom_delivery_note_no",  # Change fieldname if required
+            return_dn.name
+        )
+
 
         return dn.name
         
@@ -303,6 +317,7 @@ def create_rent_renewal(docname):
         new_rent.to_date = source_doc.to_date
         new_rent.security_deposit_cheque = source_doc.security_deposit_cheque
         new_rent.security_deposit = source_doc.security_deposit
+        new_rent.custom_delivery_note_no = source_doc.custom_delivery_note_no
 
         # -------------------------------------------------
         # ADD ONLY RENEWED ITEMS
@@ -357,6 +372,7 @@ def create_rent_renewal(docname):
 
         return_doc.rental_receipt_no = source_doc.renewal_no
         return_doc.renewal_no = source_doc.name
+        return_doc.custom_delivery_note_no = source_doc.custom_delivery_note_no
 
         # -------------------------------------------------
         # ADD ONLY RETURNED ITEMS
@@ -765,16 +781,7 @@ def create_delivery_note_return(rent_name):
     # FIND ORIGINAL DELIVERY NOTE
     # ===================================================
 
-    original_dn = frappe.db.get_value(
-        "Delivery Note",
-        {
-            "custom_rent_reference": rent_doc.name,
-            "customer": rent_doc.customer_name,
-            "is_return": 0,
-            "docstatus": 1
-        },
-        "name"
-    )
+    original_dn =return_doc.custom_delivery_note_no
 
     print("original_dn", original_dn)
 
@@ -920,16 +927,22 @@ def create_delivery_note_return(rent_name):
     # ===================================================
 
     return_dn.flags.ignore_permissions = True
+    return_doc.custom_return_delivery_note_no=return_dn.name
 
     return_dn.insert()
+    return_dn.save()
 
     print("Return DN Inserted", return_dn.name)
+    return_doc.custom_return_delivery_note_no = return_dn.name
+    return_doc.is_picked_up = 1
+    return_doc.save(ignore_permissions=True)
+    
 
     # ===================================================
     # SUBMIT DELIVERY NOTE
     # ===================================================
 
-    return_dn.save()
+    
 
     print("Return DN Submitted", return_dn.name)
 
@@ -1010,7 +1023,4 @@ def create_delivery_note_return(rent_name):
     # RETURN
     # ===================================================
 
-    return {
-        "delivery_note": return_dn.name,
-        "rent_status": rent_doc.status
-    }
+    return return_dn.name
