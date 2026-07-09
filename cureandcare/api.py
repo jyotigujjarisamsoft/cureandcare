@@ -841,6 +841,7 @@ def create_delivery_note_return(rent_name):
     return_dn.custom_delievery_by_name = rent_doc.custom_delievery_by_name
 
     return_dn.is_return = 1
+    return_dn.company = "cureandcare"
 
     return_dn.return_against = original_dn
 
