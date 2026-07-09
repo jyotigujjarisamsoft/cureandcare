@@ -197,7 +197,7 @@ def create_delivery_note(rent_name):
             "Rent",
             rent_doc.name,
             "custom_delivery_note_no",  # Change fieldname if required
-            return_dn.name
+            dn.name
         )
 
 
