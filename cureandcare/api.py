@@ -316,8 +316,11 @@ def create_rent_renewal(docname):
         new_rent.from_date = source_doc.from_date
         new_rent.to_date = source_doc.to_date
         new_rent.security_deposit_cheque = source_doc.security_deposit_cheque
-        new_rent.security_deposit = source_doc.security_deposit
+        new_rent.security_deposit = 0
         new_rent.custom_delivery_note_no = source_doc.custom_delivery_note_no
+        new_rent.paid_amount = 0
+        new_rent.remarks=source_doc.remarks
+        new_rent.pickup_charge=source_doc.pickup_charge
 
         # -------------------------------------------------
         # ADD ONLY RENEWED ITEMS
