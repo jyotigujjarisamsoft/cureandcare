@@ -67,7 +67,7 @@ def get_status_html(status):
         "Active": "#28a745",
         "Cancelled": "#dc3545",
         "Renewed": "#007bff",
-        "Closed": "#343a40",
+        "Closed": "#e74c3c",
         "Partial Active": "#fd7e14",
     }
 

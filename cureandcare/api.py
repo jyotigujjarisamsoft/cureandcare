@@ -207,7 +207,6 @@ def create_delivery_note(rent_name):
 import frappe
 from frappe.model.mapper import get_mapped_doc
 
-
 @frappe.whitelist()
 def create_rent_renewal(docname):
 
@@ -321,6 +320,11 @@ def create_rent_renewal(docname):
         new_rent.paid_amount = 0
         new_rent.remarks=source_doc.remarks
         new_rent.pickup_charge=source_doc.pickup_charge
+        new_rent.delivery_charges = 0
+        new_rent.return_delivery_charges = 0
+        new_rent.other_charges = 0
+        new_rent.paid_amount = 0
+        new_rent.balance = 0
 
         # -------------------------------------------------
         # ADD ONLY RENEWED ITEMS
@@ -451,6 +455,9 @@ def create_rent_renewal(docname):
     # -------------------------------------------------
     # MIXED RENEWED / RETURNED
     # -------------------------------------------------
+    # Renewed + Returned (all items processed)
+    elif renewed_count + returned_count == total_rows:
+        old_rent.status = "Closed"
 
     else:
 
@@ -462,14 +469,14 @@ def create_rent_renewal(docname):
     # UPDATE OLD RENT CHILD ROW STATUS
     renewal_status_map = {}
     for row in source_doc.renewal_product_details:
-    	if row.rent_item_status == "Returned":
-    		renewal_status_map[row.product_name] = "Yet To Pickup"
-    	else:
-    		renewal_status_map[row.product_name] = row.rent_item_status
-    	#renewal_status_map[row.product_name] = row.rent_item_status
+        if row.rent_item_status == "Returned":
+            renewal_status_map[row.product_name] = "Yet To Pickup"
+        else:
+            renewal_status_map[row.product_name] = row.rent_item_status
+        #renewal_status_map[row.product_name] = row.rent_item_status
     for row in old_rent.rent_product_details:
-    	if row.product_name in renewal_status_map:
-    		row.rent_item_status = renewal_status_map[row.product_name]
+        if row.product_name in renewal_status_map:
+            row.rent_item_status = renewal_status_map[row.product_name]
     old_rent.save(ignore_permissions=True)
 
     # =====================================================
@@ -499,7 +506,6 @@ def create_rent_renewal(docname):
         Existing Rent Status:
         <b>{old_rent.status}</b>
     """
- 
 @frappe.whitelist()
 def old_create_delivery_note_return(rent_name):
 
